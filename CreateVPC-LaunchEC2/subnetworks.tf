@@ -98,7 +98,7 @@ resource "aws_route_table" "foobar-Route-Table" {
   }
 }
 
-#Create internet access
+#Create internet access link from RT to IGW
 resource "aws_route" "internet-access-foobar" {
   route_table_id         = "${aws_route_table.foobar-Route-Table.id}"
   destination_cidr_block = "0.0.0.0/0"
