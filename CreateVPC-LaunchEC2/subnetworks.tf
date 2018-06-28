@@ -39,7 +39,6 @@ resource "aws_security_group" "foo-security-group" {
   }
 }
 
-
 #Create NACL with port traffic
 resource "aws_network_acl" "foobar-NACL" {
   vpc_id     = "${aws_vpc.foobar-example.id}"
