@@ -10,6 +10,7 @@ resource "aws_subnet" "foobarSubnet1" {
   }
 }
 
+
 #Create Subnet2
 resource "aws_subnet" "foobarSubnet2" {
   cidr_block        = "10.0.2.0/24"
@@ -20,6 +21,42 @@ resource "aws_subnet" "foobarSubnet2" {
     Name = "foobarSubnet2"
   }
 }
+
+
+#Create Internet Gateway
+resource "aws_internet_gateway" "foobar-GW" {
+  vpc_id = "${aws_vpc.foobar-example.id}"
+
+  tags {
+    name = "Foobar-IGW"
+  }
+}
+
+
+#Create route table
+resource "aws_route_table" "foobar-Route-Table" {
+  vpc_id = "${aws_vpc.foobar-example.id}"
+
+  tags {
+    Name = "foobar-Route-Table"
+  }
+}
+
+
+#Create internet access link from RT to IGW
+resource "aws_route" "internet-access-foobar" {
+  route_table_id         = "${aws_route_table.foobar-Route-Table.id}"
+  destination_cidr_block = "0.0.0.0/0"
+  gateway_id             = "${aws_internet_gateway.foobar-GW.id}"
+}
+
+
+#Connect Route table with Subnet1
+resource "aws_route_table_association" "foobar-RT-Association" {
+  subnet_id      = "${aws_subnet.foobarSubnet1.id}"
+  route_table_id = "${aws_route_table.foobar-Route-Table.id}"
+}
+
 
 #Create security group and attach ingress traffic
 resource "aws_security_group" "foo-security-group" {
@@ -77,35 +114,4 @@ resource "aws_network_acl" "foobar-NACL" {
   tags {
     Name = "foobar-NACL"
   }
-}
-
-#Create Internet Gateway
-resource "aws_internet_gateway" "foobar-GW" {
-  vpc_id = "${aws_vpc.foobar-example.id}"
-
-  tags {
-    name = "Foobar-IGW"
-  }
-}
-
-#Create route table
-resource "aws_route_table" "foobar-Route-Table" {
-  vpc_id = "${aws_vpc.foobar-example.id}"
-
-  tags {
-    Name = "foobar-Route-Table"
-  }
-}
-
-#Create internet access link from RT to IGW
-resource "aws_route" "internet-access-foobar" {
-  route_table_id         = "${aws_route_table.foobar-Route-Table.id}"
-  destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = "${aws_internet_gateway.foobar-GW.id}"
-}
-
-#Connect Route table with Subnet1
-resource "aws_route_table_association" "foobar-RT-Association" {
-  subnet_id      = "${aws_subnet.foobarSubnet1.id}"
-  route_table_id = "${aws_route_table.foobar-Route-Table.id}"
 }
