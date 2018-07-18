@@ -1,3 +1,1 @@
-Terraform - Elastic Beanstalk Environment
-
-<strong>Documentation</strong>
+<strong>Provisioning and Deploying Elastic Beanstalk Environment using Terraform</strong>
