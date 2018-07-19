@@ -31,8 +31,8 @@ variable "route-table-tagname" {
   description = "New public network route table"
 }
 
-variable "route1-cidr" {
-  default = "10.0.1.0/16"
+variable "internet-route" {
+  default = "0.0.0.0/0"
   description = "Network route from RT to IGW"
 }
 

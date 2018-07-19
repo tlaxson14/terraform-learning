@@ -16,6 +16,13 @@ resource "aws_route_table" "myRT" {
   }
 }
 
+#Route from RT to IGW for internet communication
+resource "aws_route" "myInternetAccess" {
+  route_table_id         = "${aws_route_table.myRT.id}"
+  destination_cidr_block = "${var.internet-route}"
+  gateway_id             = "${aws_internet_gateway.myIGW.id}"
+}
+
 #Create public subnet in us-east-1
 resource "aws_subnet" "myPublicSubnet" {
   vpc_id                  = "${aws_vpc.myVPC.id}"
