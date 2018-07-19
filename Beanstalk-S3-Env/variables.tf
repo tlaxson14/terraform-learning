@@ -30,3 +30,7 @@ variable "route-table-tagname" {
   default = "TLaxson-Public-RT"
   description = "New public network route table"
 }
+
+variable "route1-cidr" {
+  default = "10.0.1.0/24"
+}
