@@ -17,6 +17,16 @@ variable "cidr-block" {
 }
 
 variable "vpc-tagname" {
-  default = "TBLaxson-VPC"
+  default = "TLaxson-VPC"
   description = "Default tag name of VPC"
+}
+
+variable "igw-tagname" {
+  default = "TLaxson-IGW"
+  description = "Default tag name of IGW"
+}
+
+variable "route-table-tagname" {
+  default = "TLaxson-Public-RT"
+  description = "New public network route table"
 }
