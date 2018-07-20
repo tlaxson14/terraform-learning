@@ -2,12 +2,12 @@
 
 <h2>Relevant files:</h2>
 <ul>
-  <li>connections.tf</li>
-  <li>resource.tf</li>
-  <li>servers.tf</li>
-  <li>variables.tf</li>
-  <li>index.html</li>
-  <li>error.html</li>
-  <li>run.sh</li>
-  <li>trash.sh</li>
+  <li>connections.tf - Initiates provider parameters</li>
+  <li>resource.tf - S3 bucket creation and object uploads</li>
+  <li>servers.tf - Elastic Beanstalk environment and application server</li>
+  <li>variables.tf - Parameters used in .tf files</li>
+  <li>index.html - Static HTML home webpage</li>
+  <li>error.html - Static HTML error webpage</li>
+  <li>run.sh - Bash script to automate Terraform commands - "Plan" and "Apply"</li>
+  <li>trash.sh - Bash script to automate Terraform command - "Destroy"</li>
 </ul>

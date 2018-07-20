@@ -1,10 +1,10 @@
 #Create S3 Bucket
 resource "aws_s3_bucket" "myS3Bucket" {
-  bucket = "${var.s3BucketName}"
+  bucket = "${var.s3-bucket-name}"
   acl    = "public-read"
 
   tags {
-    Name        = "My Terraform Dev-Challenge Bucket"
+    Name        = "My Terraform EB Dev-Challenge Bucket"
     Environment = "Dev"
   }
 }
