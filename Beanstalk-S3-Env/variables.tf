@@ -11,42 +11,22 @@ variable "region" {
 #  description = "Access key provided to AWS through IAM"
 #}
 
-variable "vpc-cidr-block" {
-  default = "10.0.0.0/16"
-  description = "Default cidr block range for VPC"
+variable "elastic-beanstalk-name" {
+  default = "tlaxson-elastic-beanstalk-app"
+  description = "Name of Elastic Beanstalk application"
 }
 
-variable "vpc-tagname" {
-  default = "TLaxson-VPC"
-  description = "Default tag name of VPC"
+variable "s3BucketName" {
+  default = "tlaxson-terraform-dev-bucket"
+  description = "Name of S3 bucket"
 }
 
-variable "igw-tagname" {
-  default = "TLaxson-IGW"
-  description = "Default tag name of IGW"
+variable "app-tier" {
+  default = "WebServer"
+  description = "Environment tier of Elastic Beanstalk"
 }
 
-variable "route-table-tagname" {
-  default = "TLaxson-Public-RT"
-  description = "New public network route table"
-}
-
-variable "internet-route" {
-  default = "0.0.0.0/0"
-  description = "Network route from RT to IGW"
-}
-
-variable "public-subnet1-tagname" {
-  default = "TLaxson-Public-Subnet1"
-  description = "Public subnet in us-east-1a AZ"
-}
-
-variable "public-subnet1-az" {
-  default = "us-east-1a"
-  description = "AZ for public subnet1"
-}
-
-variable "public-subnet-cidr" {
-  default = "10.0.1.0/24"
-  description = "IPv4 CIDR block for public subnet in us-east-1a"
+variable "app-stack" {
+  default = "64bit Amazon Linux 2018.03 v4.5.1 running Node.js"
+  description = "Solution stack of Elastic Beanstalk environment"
 }
