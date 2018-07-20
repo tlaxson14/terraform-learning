@@ -11,7 +11,7 @@ resource "aws_s3_bucket" "myS3Bucket" {
 
 #Upload index.html file to S3 bucket
 resource "aws_s3_bucket_object" "indexObject" {
-  bucket       = "${var.s3BucketName}"
+  bucket       = "${var.s3-bucket-name}"
   key          = "index.html"
   source       = "/Users/TravisLaxson/Terraform/code/terraform-learning/Beanstalk-S3-Env/index.html"
   acl          = "public-read"
@@ -22,7 +22,7 @@ resource "aws_s3_bucket_object" "indexObject" {
 
 #Upload error.html file to S3 bucket
 resource "aws_s3_bucket_object" "errorObject" {
-  bucket       = "${var.s3BucketName}"
+  bucket       = "${var.s3-bucket-name}"
   key          = "error.html"
   source       = "/Users/TravisLaxson/Terraform/code/terraform-learning/Beanstalk-S3-Env/error.html"
   acl          = "public-read"
