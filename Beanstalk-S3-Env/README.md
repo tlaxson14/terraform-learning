@@ -14,11 +14,10 @@
 
 <h2>Execution Instructions</h2>
 <ol>
-  <li>Navigate to branch 'beanstalk-tf-challenge'</li>
   <li>Download and extract contents of compressed .zip folder from GitHub into working directory</li>
-  <li>In CLI, execute command "Terraform init" within working directory</li>
-  <li>Update resource.tf file with file source path for both index and error HTML documents</li>
-  <li>Run "./run.sh" bash script to format, display plan, and apply infrastructure. Note: It may take a few minutes to provision and deploy EB environment</li>
+  <li>In CLI, execute command "terraform init" within working directory</li>
+  <li>Update resource.tf file with file source path for both index and error HTML documents, namely parameters "source" and "etag" to reflect working directory where files are found locally</li>
+  <li>Run "./run.sh" bash script to format, display plan, and apply Terraform infrastructure. Note: It may take a few minutes to provision and deploy EB environment</li>
   <li>Enter access and secret keys in CLI when prompted</li>
   <li>Navigate to AWS Console and view Elastic Beanstalk environment and application, in addition to S3 bucket where HTML docs are stored</li>
   <li>From Elastic Beanstalk Console, navigate to "Application version" and then click on "index.html" to display static webpage</li>
