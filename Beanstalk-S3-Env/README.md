@@ -15,13 +15,13 @@
 <h2>Execution Instructions</h2>
 <ol>
   <li>Download and extract contents of compressed .zip folder from GitHub into working directory</li>
-  <li>In CLI, execute command "terraform init" within working directory</li>
-  <li>Update resource.tf file with file source path for both index and error HTML documents, namely parameters "source" and "etag" to reflect working directory where local files are found</li>
+  <li>In CLI, execute command "terraform init" within working directory.</li>
+  <li>Update resource.tf file with file source path for both index and error HTML documents, namely parameters "source" and "etag" to reflect working directory where local files are found.</li>
   <li>Run "./run.sh" bash script to format, display plan, and apply Terraform infrastructure.
-  <li>Enter access and secret keys in CLI when prompted. Note: It may take a few minutes to provision and deploy EB environment</li></li>
-  <li>Navigate to AWS Console and view Elastic Beanstalk environment and application, in addition to S3 bucket where HTML docs are stored</li>
-  <li>From Elastic Beanstalk Console, navigate to "Application version" and then click on "index.html" to display static webpage</li>
-  <li>To destroy application and EB environment, run bash script "./trash.sh" and enter "yes" to proceed destroying Terraform deployment</li>
+  <li>Enter access and secret keys in CLI when prompted.</li>
+  <li>Navigate to AWS Console and view Elastic Beanstalk environment and application, in addition to S3 bucket where HTML docs are stored. Note: It may take a few minutes to provision and deploy EB environment.</li>
+  <li>From Elastic Beanstalk Console, navigate to "Application version" and then click on "index.html" to display static webpage.</li>
+  <li>To destroy application and EB environment, run bash script "./trash.sh" and enter "yes" to proceed destroying Terraform deployment.</li>
 </ol>
 
 <h2>Implementation Revision - To Do List</h2>
