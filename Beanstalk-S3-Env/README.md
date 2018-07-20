@@ -1,4 +1,4 @@
-<strong><h1>Provisioning and Deploying Elastic Beanstalk Environment using Terraform</strong></h1>
+<strong><h1>Provision and Deploy Elastic Beanstalk Environment using Terraform</strong></h1>
 
 <h2>Relevant files:</h2>
 <ul>
@@ -30,5 +30,5 @@
   <li>Add additional security measures including bucket policies and IAM Beanstalk roles to safeguard environment</li>
   <li>Fix hard-coded source file PATH to reflect working directory</li>
   <li>Fix Elastic Beanstalk environment to display the static HTML page from environment URL - nodes currently running node.js</li>
-  <li>Create modules within current infrastructure code to ensure reusability</li> 
+  <li>Create modules within current infrastructure code to ensure reusability</li>
 </ul>
