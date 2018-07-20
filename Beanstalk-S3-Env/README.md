@@ -23,3 +23,11 @@
   <li>From Elastic Beanstalk Console, navigate to "Application version" and then click on "index.html" to display static webpage</li>
   <li>To destroy application and EB environment, run bash script "./trash.sh" and enter "yes" to proceed destroying Terraform deployment</li>
 </ol>
+
+<h2>Implementation Revision - To Do List</h2>
+<ul>
+  <li>Add AWS networking features to environment</li>
+  <li>Add additional security measures including bucket policies and IAM Beanstalk roles to safeguard environment</li>
+  <li>Fix hard-coded source file PATH to reflect working directory</li>
+  <li>Fix Elastic Beanstalk environment to display the static HTML page from environment URL - nodes currently running node.js</li>
+</ul>
